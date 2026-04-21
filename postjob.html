@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Evera Recruiter Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9ff;
+        }
+        .font-manrope { font-family: 'Manrope', sans-serif; }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container": "#e5eeff",
+                      "tertiary-container": "#4d3800",
+                      "on-surface": "#0b1c30",
+                      "tertiary": "#322300",
+                      "surface-tint": "#455d93",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-bright": "#f8f9ff",
+                      "secondary-container": "#7df3e3",
+                      "tertiary-fixed": "#ffdf9f",
+                      "surface-container-highest": "#d3e4fe",
+                      "on-secondary-fixed": "#00201c",
+                      "on-secondary-container": "#006f65",
+                      "on-tertiary-fixed": "#261a00",
+                      "on-surface-variant": "#44474f",
+                      "on-secondary-fixed-variant": "#005049",
+                      "on-secondary": "#ffffff",
+                      "surface-variant": "#d3e4fe",
+                      "on-error": "#ffffff",
+                      "on-tertiary-fixed-variant": "#5b4300",
+                      "primary": "#012456",
+                      "primary-fixed-dim": "#afc6ff",
+                      "error-container": "#ffdad6",
+                      "outline": "#747780",
+                      "secondary-fixed": "#80f6e6",
+                      "surface": "#f8f9ff",
+                      "inverse-on-surface": "#eaf1ff",
+                      "surface-container-low": "#eff4ff",
+                      "surface-dim": "#cbdbf5",
+                      "on-primary-container": "#8ca5df",
+                      "on-primary-fixed-variant": "#2c4679",
+                      "on-primary": "#ffffff",
+                      "background": "#f8f9ff",
+                      "on-tertiary": "#ffffff",
+                      "secondary": "#006a61",
+                      "error": "#ba1a1a",
+                      "primary-container": "#1f3a6d",
+                      "on-error-container": "#93000a",
+                      "primary-fixed": "#d9e2ff",
+                      "on-primary-fixed": "#001a43",
+                      "secondary-fixed-dim": "#61d9ca",
+                      "inverse-primary": "#afc6ff",
+                      "outline-variant": "#c4c6d1",
+                      "on-tertiary-container": "#cb9f38",
+                      "tertiary-fixed-dim": "#efc055",
+                      "surface-container-high": "#dce9ff",
+                      "inverse-surface": "#213145",
+                      "on-background": "#0b1c30"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xl": "4rem",
+                      "sm": "1rem",
+                      "md": "1.5rem",
+                      "xs": "0.5rem",
+                      "container-max": "1280px",
+                      "gutter": "1.5rem",
+                      "lg": "2.5rem",
+                      "unit": "4px"
+              },
+              "fontFamily": {
+                      "h3": ["Manrope"],
+                      "h1": ["Manrope"],
+                      "body-lg": ["Inter"],
+                      "body-sm": ["Inter"],
+                      "label-md": ["Inter"],
+                      "body-md": ["Inter"],
+                      "h2": ["Manrope"],
+                      "button": ["Inter"]
+              },
+              "fontSize": {
+                      "h3": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                      "h1": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "label-md": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "h2": ["32px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "button": ["16px", {"lineHeight": "1", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface">
+<!-- TopAppBar -->
+<header class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md shadow-sm fixed top-0 w-full z-50 border-b border-slate-100 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-teal-600 text-3xl">work</span>
+<span class="text-2xl font-black text-slate-900 dark:text-white font-manrope tracking-tight">Evera</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<nav class="flex gap-6">
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-teal-500 transition-colors duration-200" href="#">Find Jobs</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-teal-500 transition-colors duration-200" href="#">Companies</a>
+<a class="text-teal-600 dark:text-teal-400 border-b-2 border-teal-600 pb-1 font-manrope tracking-tight" href="profle.html">Dashboard</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-teal-500 transition-colors duration-200" href="#">Messages</a>
+</nav>
+
+</div>
+</div>
+</header>
+<div class="flex min-h-screen pt-20">
+<!-- NavigationDrawer -->
+<aside class="hidden lg:flex flex-col h-screen sticky top-20 w-64 border-r border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 space-y-8">
+<div class="flex flex-col items-start gap-2 mb-8">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="professional portrait of Alex Sterling, a male recruitment manager in a minimalist office setting with soft natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9ioCGA84TAlPxiXiUOXNF0kjQbECRxvkbeTEdW1G_tDh5ppOjRO0RT549USEIIqnXeagA6EAX8t_NHWb65rkbAVeMS_oFGngxZHJ_UxXk6QzeP2zxgl7GEdLplZFgO3vnq4H6SqOvTT7h0DABoV_4ORwbOm8QWBV7VxfGM52_RBhofsXKCcdPSMpHxLQoX7dkIzr3Qxdp6HXdhkUYPPqaAD61I5AmjFTcnPZW0RJ8MjtoZMm82P8lGEXkWjDdDumZoyFUrBeyh_8"/>
+</div>
+<div>
+<h3 class="text-slate-900 dark:text-white font-bold font-manrope">Alex Sterling</h3>
+<p class="text-slate-500 text-sm font-manrope">Recruitment Head</p>
+<span class="inline-block mt-1 px-2 py-0.5 bg-tertiary-fixed text-on-tertiary-fixed text-[10px] font-bold rounded uppercase tracking-wider">Premium Member</span>
+</div>
+</div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 bg-teal-50 dark:bg-teal-900/20 text-teal-700 dark:text-teal-300 font-bold border-r-4 border-teal-600 transition-all" href="profle.html">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-manrope text-sm">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all" href="#">
+<span class="material-symbols-outlined">search</span>
+<span class="font-manrope text-sm">Find Jobs</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all" href="#">
+<span class="material-symbols-outlined">business</span>
+<span class="font-manrope text-sm">Companies</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-manrope text-sm">Salaries</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all" href="#">
+<span class="material-symbols-outlined">mail</span>
+<span class="font-manrope text-sm">Messages</span>
+</a>
+</nav>
+</aside>
+<!-- Main Canvas -->
+<main class="flex-1 p-6 md:p-10 max-w-7xl mx-auto w-full">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+<div>
+<h1 class="font-h1 text-h1 text-primary">Recruiter Workspace</h1>
+<p class="text-body-lg text-slate-500 mt-2">Manage your listings, applicants, and team activity from one place.</p>
+</div>
+<div class="flex gap-3">
+<div class="bg-white p-4 rounded-xl shadow-[0_4px_20px_rgba(31,58,109,0.05)] border border-slate-50 flex items-center gap-4">
+<div class="bg-teal-50 p-2 rounded-lg text-teal-600">
+<span class="material-symbols-outlined">person_search</span>
+</div>
+<div>
+<p class="text-xs text-slate-400 font-semibold uppercase">Active Applicants</p>
+<p class="text-xl font-bold text-slate-900">124</p>
+</div>
+</div>
+<div class="bg-white p-4 rounded-xl shadow-[0_4px_20px_rgba(31,58,109,0.05)] border border-slate-50 flex items-center gap-4">
+<div class="bg-blue-50 p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined">post_add</span>
+</div>
+<div>
+<p class="text-xs text-slate-400 font-semibold uppercase">Open Roles</p>
+<p class="text-xl font-bold text-slate-900">12</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Dashboard Content Layout (Bento Style) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Post a Job Form Section (Left side large) -->
+<section class="lg:col-span-8 space-y-gutter">
+<div class="bg-white rounded-xl shadow-[0_4px_20px_rgba(31,58,109,0.05)] p-8 border border-slate-100">
+<div class="flex items-center justify-between mb-8">
+<h2 class="font-h2 text-h2 text-slate-900">Create New Opportunity</h2>
+<span class="bg-surface-container text-primary px-3 py-1 rounded-full text-xs font-bold">DRAFT SAVED 10:45 AM</span>
+</div>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="block font-label-md text-label-md text-slate-700">JOB TITLE</label>
+<input class="w-full rounded-lg border-slate-200 focus:border-secondary focus:ring-secondary transition-all py-3" placeholder="e.g. Senior Product Designer" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="block font-label-md text-label-md text-slate-700">DEPARTMENT</label>
+<select class="w-full rounded-lg border-slate-200 focus:border-secondary focus:ring-secondary transition-all py-3">
+<option>Engineering</option>
+<option>Design</option>
+<option>Marketing</option>
+<option>Product</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="block font-label-md text-label-md text-slate-700">LOCATION</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">location_on</span>
+<input class="w-full rounded-lg border-slate-200 focus:border-secondary focus:ring-secondary transition-all py-3 pl-10" placeholder="Remote / New York, NY" type="text"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="block font-label-md text-label-md text-slate-700">SALARY RANGE</label>
+<input class="w-full rounded-lg border-slate-200 focus:border-secondary focus:ring-secondary transition-all py-3" placeholder="$120k - $160k" type="text"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="block font-label-md text-label-md text-slate-700">DESCRIPTION</label>
+<textarea class="w-full rounded-lg border-slate-200 focus:border-secondary focus:ring-secondary transition-all" placeholder="Write about the role, expectations, and requirements..." rows="4"></textarea>
+</div>
+<div class="flex justify-end gap-4 pt-4">
+<button class="px-6 py-3 border border-slate-200 rounded-lg font-button text-button text-slate-600 hover:bg-slate-50 transition-all" type="button">Save as Draft</button>
+<button class="px-8 py-3 bg-tertiary-fixed text-on-tertiary-fixed rounded-lg font-button text-button shadow-md hover:brightness-95 transition-all" type="submit">Publish Job</button>
+</div>
+</form>
+</div>
+<!-- Applicant Management Table -->
+<div class="bg-white rounded-xl shadow-[0_4px_20px_rgba(31,58,109,0.05)] border border-slate-100 overflow-hidden">
+<div class="p-6 border-b border-slate-100 flex justify-between items-center">
+<h3 class="font-h3 text-h3 text-slate-900">Recent Applicants</h3>
+<button class="text-secondary font-semibold text-sm flex items-center gap-1 hover:underline">
+                                View all 
+                                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-slate-50">
+<tr>
+<th class="px-6 py-4 font-label-md text-label-md text-slate-500 uppercase">Candidate</th>
+<th class="px-6 py-4 font-label-md text-label-md text-slate-500 uppercase">Applied For</th>
+<th class="px-6 py-4 font-label-md text-label-md text-slate-500 uppercase">Status</th>
+<th class="px-6 py-4 font-label-md text-label-md text-slate-500 uppercase text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-50">
+<tr class="hover:bg-slate-50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-slate-200 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="professional portrait of a woman tech candidate with glasses, smiling confidently against a neutral studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFZwCIcn3DwA2Z9YcPjRaDzhHkl3X9G5ZRByax5bLEs_vjdxF_9kzFN4HFmd8E0821kiRgZP9YWqXrc7TXdne4JKOAogKvLoGhmBH0vA097bKz1b5q9eT_CR6vHPP9lftL_ppOK9ZNyL9dbCBcrgz5EA7wV8riuUwHJ35OKwOk0dKnRdN3Ng-Jo6vpAe0nhMDVFEREfTd2Yp3guT1vjduyfgOMJ884OaiejGq-wNcOGGcoirWi4IdIjxC55K5IzolWcZ07L1411jQ"/>
+</div>
+<div>
+<p class="font-bold text-slate-900 text-sm">Sarah Jenkins</p>
+<p class="text-xs text-slate-500">sarah.j@example.com</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<p class="text-sm font-medium text-slate-700">Senior UX Researcher</p>
+<p class="text-xs text-slate-400">2 hours ago</p>
+</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-bold uppercase tracking-tighter">In Review</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-primary hover:text-secondary"><span class="material-symbols-outlined">more_vert</span></button>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-slate-200 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="young male professional in a modern blazer looking directly at camera, soft corporate background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiYzeVZniw94PMkr3Gc75l4V1f-RtA8bMWn5Rnjy7LaNKxnKNTd5fRBXofCq39M7CZA-4z6AggzsLp_crHREqgQUnZITItVjIlkGAJ_kACutDk_I5van4G5e8ImW7G5ugFZSMHsrqtWHNo5d0R46RECztLC6MxgaWE668TjJFW3V1kaXnVcpl3K0t52xW7vGtc3t32kERH5IT67rb52U1vl70kSFad_kLzWVX-QU3CTF7dBqja2D3bktSwyKUedXiXZsblHmJO17s"/>
+</div>
+<div>
+<p class="font-bold text-slate-900 text-sm">David Chen</p>
+<p class="text-xs text-slate-500">chen.dev@example.com</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<p class="text-sm font-medium text-slate-700">Backend Engineer</p>
+<p class="text-xs text-slate-400">5 hours ago</p>
+</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-surface-container text-primary rounded-full text-xs font-bold uppercase tracking-tighter">Interview</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-primary hover:text-secondary"><span class="material-symbols-outlined">more_vert</span></button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- Posted Jobs Sidebar (Right side small) -->
+<section class="lg:col-span-4 space-y-gutter">
+<div class="bg-white rounded-xl shadow-[0_4px_20px_rgba(31,58,109,0.05)] p-6 border border-slate-100">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-h3 text-h3 text-slate-900">Active Listings</h3>
+<span class="text-xs bg-slate-100 text-slate-500 px-2 py-1 rounded">12 Total</span>
+</div>
+<div class="space-y-4">
+<!-- Job Card Mini -->
+<div class="group border-l-4 border-secondary p-4 bg-slate-50 rounded-r-lg hover:bg-white hover:shadow-md transition-all cursor-pointer">
+<div class="flex justify-between items-start mb-2">
+<h4 class="font-bold text-slate-900 leading-tight">Lead Software Architect</h4>
+<span class="material-symbols-outlined text-slate-300 group-hover:text-secondary transition-colors">open_in_new</span>
+</div>
+<div class="flex items-center gap-4 text-xs text-slate-500 font-medium">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">groups</span> 48 Applicants</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> 12d Left</span>
+</div>
+</div>
+<div class="group border-l-4 border-slate-200 p-4 bg-white rounded-r-lg hover:shadow-md transition-all cursor-pointer">
+<div class="flex justify-between items-start mb-2">
+<h4 class="font-bold text-slate-900 leading-tight">Product Marketing Lead</h4>
+<span class="material-symbols-outlined text-slate-300 group-hover:text-secondary transition-colors">open_in_new</span>
+</div>
+<div class="flex items-center gap-4 text-xs text-slate-500 font-medium">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">groups</span> 12 Applicants</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> 5d Left</span>
+</div>
+</div>
+<div class="group border-l-4 border-slate-200 p-4 bg-white rounded-r-lg hover:shadow-md transition-all cursor-pointer">
+<div class="flex justify-between items-start mb-2">
+<h4 class="font-bold text-slate-900 leading-tight">Junior Graphic Designer</h4>
+<span class="material-symbols-outlined text-slate-300 group-hover:text-secondary transition-colors">open_in_new</span>
+</div>
+<div class="flex items-center gap-4 text-xs text-slate-500 font-medium">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">groups</span> 156 Applicants</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> 1d Left</span>
+</div>
+</div>
+</div>
+<button class="w-full mt-6 py-3 text-sm font-bold text-slate-500 border border-dashed border-slate-200 rounded-lg hover:bg-slate-50 transition-all">
+                            Browse Archived Jobs
+                        </button>
+</div>
+<!-- Market Insights Card -->
+<div class="bg-primary-container text-white rounded-xl p-6 shadow-xl relative overflow-hidden">
+<div class="relative z-10">
+<h3 class="font-h3 text-lg mb-2">Market Insights</h3>
+<p class="text-sm text-on-primary-container mb-6">Salaries for "Product Designers" have increased by 12% in your region this quarter.</p>
+<div class="h-24 flex items-end gap-1">
+<div class="bg-teal-400 w-full rounded-t" style="height: 40%;"></div>
+<div class="bg-teal-400 w-full rounded-t" style="height: 60%;"></div>
+<div class="bg-teal-400 w-full rounded-t" style="height: 45%;"></div>
+<div class="bg-teal-400 w-full rounded-t" style="height: 80%;"></div>
+<div class="bg-white w-full rounded-t" style="height: 95%;"></div>
+</div>
+</div>
+<!-- Background decoration -->
+<div class="absolute -bottom-10 -right-10 w-40 h-40 bg-white/5 rounded-full blur-3xl"></div>
+</div>
+</section>
+</div>
+</main>
+</div>
+<!-- BottomNavBar (Mobile only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-white dark:bg-slate-900 lg:hidden flex justify-around items-center px-4 py-3 rounded-t-2xl shadow-[0_-4px_20px_rgba(31,58,109,0.05)] border-t border-slate-100 dark:border-slate-800">
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-semibold font-manrope">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">search</span>
+<span class="text-[10px] font-semibold font-manrope">Search</span>
+</a>
+<a class="flex flex-col items-center justify-center text-teal-600 dark:text-teal-400 bg-teal-50/50 dark:bg-teal-900/30 rounded-xl px-3 py-1" href="profle.html">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px] font-semibold font-manrope">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-semibold font-manrope">Profile</span>
+</a>
+</nav>
+<!-- Footer -->
+<footer class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6 bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 mt-20">
+<div class="flex items-center gap-2">
+<span class="text-lg font-bold text-teal-600">Evera</span>
+<p class="font-manrope text-sm text-slate-500">© 2024 Evera Recruitment. All rights reserved.</p>
+</div>
+<div class="flex gap-8">
+<a class="text-slate-500 hover:text-teal-600 font-manrope text-sm transition-colors" href="#">Privacy Policy</a>
+<a class="text-slate-500 hover:text-teal-600 font-manrope text-sm transition-colors" href="#">Terms of Service</a>
+<a class="text-slate-500 hover:text-teal-600 font-manrope text-sm transition-colors" href="#">Contact Us</a>
+<a class="text-slate-500 hover:text-teal-600 font-manrope text-sm transition-colors" href="#">About Evera</a>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Evera Recruitment | Senior UX Designer Role</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#e5eeff",
+                        "tertiary-container": "#4d3800",
+                        "on-surface": "#0b1c30",
+                        "tertiary": "#322300",
+                        "surface-tint": "#455d93",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-bright": "#f8f9ff",
+                        "secondary-container": "#7df3e3",
+                        "tertiary-fixed": "#ffdf9f",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-secondary-fixed": "#00201c",
+                        "on-secondary-container": "#006f65",
+                        "on-tertiary-fixed": "#261a00",
+                        "on-surface-variant": "#44474f",
+                        "on-secondary-fixed-variant": "#005049",
+                        "on-secondary": "#ffffff",
+                        "surface-variant": "#d3e4fe",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed-variant": "#5b4300",
+                        "primary": "#012456",
+                        "primary-fixed-dim": "#afc6ff",
+                        "error-container": "#ffdad6",
+                        "outline": "#747780",
+                        "secondary-fixed": "#80f6e6",
+                        "surface": "#f8f9ff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "surface-container-low": "#eff4ff",
+                        "surface-dim": "#cbdbf5",
+                        "on-primary-container": "#8ca5df",
+                        "on-primary-fixed-variant": "#2c4679",
+                        "on-primary": "#ffffff",
+                        "background": "#f8f9ff",
+                        "on-tertiary": "#ffffff",
+                        "secondary": "#006a61",
+                        "error": "#ba1a1a",
+                        "primary-container": "#1f3a6d",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#d9e2ff",
+                        "on-primary-fixed": "#001a43",
+                        "secondary-fixed-dim": "#61d9ca",
+                        "inverse-primary": "#afc6ff",
+                        "outline-variant": "#c4c6d1",
+                        "on-tertiary-container": "#cb9f38",
+                        "tertiary-fixed-dim": "#efc055",
+                        "surface-container-high": "#dce9ff",
+                        "inverse-surface": "#213145",
+                        "on-background": "#0b1c30",
+                        "brand-gold": "#D4A73F"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "4rem",
+                        "sm": "1rem",
+                        "md": "1.5rem",
+                        "xs": "0.5rem",
+                        "container-max": "1280px",
+                        "gutter": "1.5rem",
+                        "lg": "2.5rem",
+                        "unit": "4px"
+                    },
+                    "fontFamily": {
+                        "h3": ["Manrope"],
+                        "h1": ["Manrope"],
+                        "body-lg": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "h2": ["Manrope"],
+                        "button": ["Inter"]
+                    },
+                    "fontSize": {
+                        "h3": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "h1": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "h2": ["32px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "button": ["16px", {"lineHeight": "1", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .card-shadow {
+            box-shadow: 0px 4px 20px rgba(31, 58, 109, 0.05);
+        }
+        .active-nav-underline {
+            position: relative;
+        }
+        .active-nav-underline::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: currentColor;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full flex justify-between items-center px-6 py-4 max-w-7xl mx-auto bg-white/90 backdrop-blur-md z-50 border-b border-slate-100 shadow-sm left-1/2 -translate-x-1/2">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-teal-600 text-3xl">work</span>
+<span class="text-2xl font-black text-slate-900 font-manrope tracking-tight">Evera</span>
+</div>
+<nav class="hidden md:flex gap-6">
+<a class="text-teal-600 border-b-2 border-teal-600 pb-1 font-manrope tracking-tight font-medium" href="#">Find Jobs</a>
+<a class="text-slate-600 font-medium font-manrope tracking-tight hover:text-teal-500 transition-colors duration-200" href="#">Companies</a>
+<a class="text-slate-600 font-medium font-manrope tracking-tight hover:text-teal-500 transition-colors duration-200" href="#">Salaries</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<a class="hidden md:inline-flex items-center justify-center px-6 py-2 rounded-full border border-teal-600 text-teal-600 font-button text-button hover:bg-teal-50 transition-all" href="postjob.html">Post a Job</a>
+<div class="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center overflow-hidden border-2 border-white shadow-sm">
+<img alt="User Profile" data-alt="professional headshot of a smiling business executive with a blurred office background in soft daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEoIjpVf-_rKof35__SzUOZfDc7tfJTFqmApYfnrMCVhZ8YECrgUJ94xSvjcYAYEBHgJzaTaps3SuWJIRwbL7iYiNsb0dDoEvuGxKGOhg9yV-f0aZYFtTDpC4M_UGqKOzw9pPN0BoMtNLKFX5kuf9moxVFhX3GhIevIiN1JLo6WLn1p8V4qrOiXHY_T9GIRXuDkMks6_zE5ltsdvE7Im0R9ifeUfilnJkLM8n8YsECxMoMBuE43eu0pCQiBs4FhzOxhpnZQVvcPoI"/>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32 max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Content Column -->
+<div class="lg:col-span-8 space-y-8">
+<!-- Hero Header Card -->
+<section class="bg-white p-8 rounded-xl card-shadow border-l-4 border-teal-600">
+<div class="flex flex-col md:flex-row justify-between items-start gap-6">
+<div class="space-y-4">
+<div class="flex gap-2">
+<span class="px-3 py-1 rounded-full bg-secondary-container/20 text-on-secondary-container text-label-md font-label-md">Full-time</span>
+<span class="px-3 py-1 rounded-full bg-surface-container text-on-surface-variant text-label-md font-label-md">Remote</span>
+</div>
+<h1 class="font-h1 text-h1 text-primary">Senior UX Designer</h1>
+<div class="flex items-center gap-4 text-on-surface-variant">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-teal-600">business</span>
+<span class="font-body-md">Stellar Systems Inc.</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-teal-600">location_on</span>
+<span class="font-body-md">San Francisco, CA</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-teal-600">schedule</span>
+<span class="font-body-md">Posted 2 days ago</span>
+</div>
+</div>
+</div>
+<div class="flex md:flex-col gap-3 w-full md:w-auto">
+<button class="flex-1 md:flex-none px-8 py-4 rounded-xl bg-brand-gold text-white font-button text-button shadow-lg shadow-brand-gold/20 hover:scale-105 active:scale-95 transition-all">Apply Now</button>
+<button class="flex items-center justify-center p-4 rounded-xl border border-slate-200 text-slate-600 hover:bg-slate-50 transition-all">
+<span class="material-symbols-outlined">bookmark</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Job Description -->
+<section class="bg-white p-8 rounded-xl card-shadow space-y-8">
+<div>
+<h2 class="font-h2 text-h2 text-primary mb-4">Role Overview</h2>
+<p class="font-body-lg text-on-surface-variant mb-6">
+                        As a Senior UX Designer at Stellar Systems, you will lead the design strategy for our core cloud infrastructure platform. You’ll be responsible for translating complex technical workflows into intuitive, elegant user experiences that empower developers worldwide.
+                    </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="p-4 rounded-lg bg-surface-container-low flex items-center gap-3">
+<span class="material-symbols-outlined text-teal-600">payments</span>
+<div>
+<p class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Salary Range</p>
+<p class="font-h3 text-h3 text-primary">$160k - $210k</p>
+</div>
+</div>
+<div class="p-4 rounded-lg bg-surface-container-low flex items-center gap-3">
+<span class="material-symbols-outlined text-teal-600">group</span>
+<div>
+<p class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Team Size</p>
+<p class="font-h3 text-h3 text-primary">12 Designers</p>
+</div>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<h3 class="font-h3 text-h3 text-primary">Key Responsibilities</h3>
+<ul class="space-y-3">
+<li class="flex gap-3 text-on-surface-variant font-body-md">
+<span class="material-symbols-outlined text-teal-600 flex-shrink-0">check_circle</span>
+                            Define the long-term design vision for our SaaS dashboard and analytics tools.
+                        </li>
+<li class="flex gap-3 text-on-surface-variant font-body-md">
+<span class="material-symbols-outlined text-teal-600 flex-shrink-0">check_circle</span>
+                            Collaborate with product managers and engineers to build high-fidelity prototypes.
+                        </li>
+<li class="flex gap-3 text-on-surface-variant font-body-md">
+<span class="material-symbols-outlined text-teal-600 flex-shrink-0">check_circle</span>
+                            Conduct user research and usability testing to validate design decisions.
+                        </li>
+<li class="flex gap-3 text-on-surface-variant font-body-md">
+<span class="material-symbols-outlined text-teal-600 flex-shrink-0">check_circle</span>
+                            Mentor junior designers and contribute to our evolving design system.
+                        </li>
+</ul>
+</div>
+<div class="space-y-4">
+<h3 class="font-h3 text-h3 text-primary">Requirements</h3>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-3 py-1 rounded bg-slate-100 text-slate-700 text-sm font-medium">5+ Years Experience</span>
+<span class="px-3 py-1 rounded bg-slate-100 text-slate-700 text-sm font-medium">Figma Mastery</span>
+<span class="px-3 py-1 rounded bg-slate-100 text-slate-700 text-sm font-medium">SaaS Design</span>
+<span class="px-3 py-1 rounded bg-slate-100 text-slate-700 text-sm font-medium">User Research</span>
+</div>
+<ul class="space-y-3">
+<li class="flex gap-3 text-on-surface-variant font-body-md">
+<span class="material-symbols-outlined text-teal-600 flex-shrink-0">verified</span>
+                            Proven track record of designing complex enterprise software products.
+                        </li>
+<li class="flex gap-3 text-on-surface-variant font-body-md">
+<span class="material-symbols-outlined text-teal-600 flex-shrink-0">verified</span>
+                            Strong portfolio demonstrating end-to-end design thinking and execution.
+                        </li>
+<li class="flex gap-3 text-on-surface-variant font-body-md">
+<span class="material-symbols-outlined text-teal-600 flex-shrink-0">verified</span>
+                            Excellent communication skills and ability to articulate design logic to stakeholders.
+                        </li>
+</ul>
+</div>
+<div class="pt-8 border-t border-slate-100">
+<h3 class="font-h3 text-h3 text-primary mb-4">About the Company</h3>
+<div class="flex flex-col md:flex-row gap-6">
+<div class="w-full md:w-1/3 aspect-video rounded-xl overflow-hidden">
+<img alt="Office Space" class="w-full h-full object-cover" data-alt="modern minimalist office lobby with floor to ceiling glass windows and sleek architectural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAws_uDmR5nyr0VfHUcJnBTf1GKt6BZKu_42aBALGdyfYLXZRsN23U_RPUdkjYR8Tdbf179gRITlrNxUavFpF_KZGarcvoq4aj9K05cF5rHT9pfrCDeJAdImLZ_nJ197bFSmXh_pLlVLKCTDcQcGt3lVml5f05aNA8L0z2aw5WH_SgJv0c-J84ip6T3Zo0nYdRERUweTaAs1t567FVTZ5j4SCM4X6naAEUzUNvf1252G8sKjee_ojJYBuE3swyCkdmcFfx_UovioZI"/>
+</div>
+<div class="flex-1">
+<p class="font-body-md text-on-surface-variant mb-4">
+                                Stellar Systems is a leading provider of cloud-native observability tools. We believe in high autonomy, trust, and pushing the boundaries of what's possible in technical design.
+                            </p>
+<a class="text-teal-600 font-button hover:underline flex items-center gap-1" href="#">
+                                Visit company profile <span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Sidebar Summary -->
+<aside class="lg:col-span-4">
+<div class="sticky top-24 space-y-6">
+<!-- Job Summary Card -->
+<div class="bg-white p-6 rounded-xl card-shadow border border-slate-100">
+<h3 class="font-h3 text-primary mb-6">Job Summary</h3>
+<div class="space-y-6">
+<div class="flex justify-between items-center py-3 border-b border-slate-50">
+<span class="text-slate-500 font-label-md text-label-md">Role Type</span>
+<span class="text-primary font-bold">Individual Contributor</span>
+</div>
+<div class="flex justify-between items-center py-3 border-b border-slate-50">
+<span class="text-slate-500 font-label-md text-label-md">Hiring Manager</span>
+<span class="text-primary font-bold">David Chen</span>
+</div>
+<div class="flex justify-between items-center py-3 border-b border-slate-50">
+<span class="text-slate-500 font-label-md text-label-md">Report To</span>
+<span class="text-primary font-bold">VP of Design</span>
+</div>
+<div class="flex justify-between items-center py-3 border-b border-slate-50">
+<span class="text-slate-500 font-label-md text-label-md">Benefit Level</span>
+<span class="text-primary font-bold">Platinum Package</span>
+</div>
+</div>
+<div class="mt-8 p-4 rounded-xl bg-teal-50 border border-teal-100 flex items-start gap-3">
+<span class="material-symbols-outlined text-teal-600">info</span>
+<p class="text-xs text-teal-800 leading-relaxed">
+                            This position is eligible for our quarterly equity grants and annual performance bonuses.
+                        </p>
+</div>
+</div>
+<!-- Contact Recruiter Card -->
+<div class="bg-primary text-white p-6 rounded-xl card-shadow overflow-hidden relative">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-white/10 rounded-full blur-xl"></div>
+<h3 class="font-h3 mb-4 relative z-10">Need Help?</h3>
+<p class="font-body-sm mb-6 opacity-80 relative z-10">Our hiring team is here to answer any questions about this role or our culture.</p>
+<div class="flex items-center gap-3 mb-6 relative z-10">
+<img alt="Recruiter" class="w-12 h-12 rounded-full border-2 border-white/20" data-alt="professional headshot of a female recruiter with glasses and a warm smile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWrJEiz7oUB3ejLku5NYVpfUG2oN---9VV0IQagKhmSefYhSNbJYASJ0LSqdQ0HP5e7-D0s7aG7SjqmpejHdQsW4yr83RQssLhVNqHHqDxPKBk6HN9aXIYBoNblwi11ODC4gEIa-Y3bHlSFTnAzNjnagTWcK5K6tDp5LI5E8iabv6Isopb7rTwmkKb5jv6Z8DzwLWY0Ec29JwksMWV9LzerhTcdHAyx0pP4-On2y2ym2tCpvALO4NKlLm-GAmRx0Ebl3Do7sHTCIA"/>
+<div>
+<p class="font-bold">Sarah Jenkins</p>
+<p class="text-xs opacity-70">Lead Talent Partner</p>
+</div>
+</div>
+<button class="w-full py-3 rounded-lg bg-white text-primary font-button text-sm hover:bg-slate-100 transition-all">Message Sarah</button>
+</div>
+</div>
+</aside>
+</main>
+<!-- Sticky Mobile Apply Bar -->
+<div class="lg:hidden fixed bottom-0 left-0 w-full bg-white p-4 shadow-[0_-4px_20px_rgba(0,0,0,0.1)] z-50 flex items-center justify-between border-t border-slate-100">
+<div class="flex flex-col">
+<span class="text-xs font-bold text-slate-500 uppercase">Salary</span>
+<span class="text-primary font-h3">$160k - $210k</span>
+</div>
+<button class="px-8 py-3 rounded-xl bg-brand-gold text-white font-button shadow-lg shadow-brand-gold/20">Apply Now</button>
+</div>
+<!-- Footer -->
+<footer class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6 bg-slate-50 border-t border-slate-200">
+<div class="flex flex-col gap-2">
+<span class="text-lg font-bold text-teal-600 font-manrope">Evera</span>
+<p class="font-manrope text-sm text-slate-500">© 2024 Evera Recruitment. All rights reserved.</p>
+</div>
+<div class="flex gap-8">
+<a class="text-slate-500 hover:text-teal-600 font-manrope text-sm transition-colors" href="#">Privacy Policy</a>
+<a class="text-slate-500 hover:text-teal-600 font-manrope text-sm transition-colors" href="#">Terms of Service</a>
+<a class="text-slate-500 hover:text-teal-600 font-manrope text-sm transition-colors" href="#">Contact Us</a>
+<a class="text-slate-500 hover:text-teal-600 font-manrope text-sm transition-colors" href="#">About Evera</a>
+</div>
+</footer>
+<!-- Bottom Navigation Bar (Mobile only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 lg:hidden bg-white border-t border-slate-100 rounded-t-2xl shadow-[0_-4px_20px_rgba(31,58,109,0.05)]">
+<a class="flex flex-col items-center justify-center text-teal-600 bg-teal-50/50 rounded-xl px-3 py-1 scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-weight="fill">home</span>
+<span class="text-[10px] font-semibold font-manrope">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400" href="#">
+<span class="material-symbols-outlined">search</span>
+<span class="text-[10px] font-semibold font-manrope">Search</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400" href="#">
+<span class="material-symbols-outlined">bookmark</span>
+<span class="text-[10px] font-semibold font-manrope">Saved</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-semibold font-manrope">Profile</span>
+</a>
+</nav>
+</body></html>

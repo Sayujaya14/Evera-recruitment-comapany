@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container": "#e5eeff",
+                    "tertiary-container": "#4d3800",
+                    "on-surface": "#0b1c30",
+                    "tertiary": "#322300",
+                    "surface-tint": "#455d93",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-bright": "#f8f9ff",
+                    "secondary-container": "#7df3e3",
+                    "tertiary-fixed": "#ffdf9f",
+                    "surface-container-highest": "#d3e4fe",
+                    "on-secondary-fixed": "#00201c",
+                    "on-secondary-container": "#006f65",
+                    "on-tertiary-fixed": "#261a00",
+                    "on-surface-variant": "#44474f",
+                    "on-secondary-fixed-variant": "#005049",
+                    "on-secondary": "#ffffff",
+                    "surface-variant": "#d3e4fe",
+                    "on-error": "#ffffff",
+                    "on-tertiary-fixed-variant": "#5b4300",
+                    "primary": "#012456",
+                    "primary-fixed-dim": "#afc6ff",
+                    "error-container": "#ffdad6",
+                    "outline": "#747780",
+                    "secondary-fixed": "#80f6e6",
+                    "surface": "#f8f9ff",
+                    "inverse-on-surface": "#eaf1ff",
+                    "surface-container-low": "#eff4ff",
+                    "surface-dim": "#cbdbf5",
+                    "on-primary-container": "#8ca5df",
+                    "on-primary-fixed-variant": "#2c4679",
+                    "on-primary": "#ffffff",
+                    "background": "#f8f9ff",
+                    "on-tertiary": "#ffffff",
+                    "secondary": "#006a61",
+                    "error": "#ba1a1a",
+                    "primary-container": "#1f3a6d",
+                    "on-error-container": "#93000a",
+                    "primary-fixed": "#d9e2ff",
+                    "on-primary-fixed": "#001a43",
+                    "secondary-fixed-dim": "#61d9ca",
+                    "inverse-primary": "#afc6ff",
+                    "outline-variant": "#c4c6d1",
+                    "on-tertiary-container": "#cb9f38",
+                    "tertiary-fixed-dim": "#efc055",
+                    "surface-container-high": "#dce9ff",
+                    "inverse-surface": "#213145",
+                    "on-background": "#0b1c30"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "4rem",
+                    "sm": "1rem",
+                    "md": "1.5rem",
+                    "xs": "0.5rem",
+                    "container-max": "1280px",
+                    "gutter": "1.5rem",
+                    "lg": "2.5rem",
+                    "unit": "4px"
+            },
+            "fontFamily": {
+                    "h3": ["Manrope"],
+                    "h1": ["Manrope"],
+                    "body-lg": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "label-md": ["Inter"],
+                    "body-md": ["Inter"],
+                    "h2": ["Manrope"],
+                    "button": ["Inter"]
+            },
+            "fontSize": {
+                    "h3": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "h1": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "h2": ["32px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "button": ["16px", {"lineHeight": "1", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .job-card-shadow {
+            shadow: 0px 4px 20px rgba(31, 58, 109, 0.05);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #dce9ff;
+            border-radius: 10px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md antialiased">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full flex justify-between items-center px-6 py-4 max-w-full mx-auto bg-white/90 backdrop-blur-md z-50 border-b border-slate-100 shadow-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="work">work</span>
+<span class="text-2xl font-black text-slate-900 font-h1 tracking-tight">Evera</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-secondary border-b-2 border-secondary pb-1 font-label-md text-sm" href="#">Find Jobs</a>
+<a class="text-slate-600 hover:text-secondary transition-colors duration-200 font-label-md text-sm" href="#">Companies</a>
+<a class="text-slate-600 hover:text-secondary transition-colors duration-200 font-label-md text-sm" href="profle.html">Dashboard</a>
+</nav>
+<div class="flex items-center gap-4">
+<a class="bg-secondary text-white px-6 py-2.5 rounded-lg font-button text-body-sm hover:opacity-90 active:scale-95 transition-all inline-flex items-center justify-center" href="postjob.html">Post a Job</a>
+</div>
+</header>
+<main class="pt-24 pb-20 px-6 max-w-7xl mx-auto flex gap-8">
+<!-- NavigationDrawer / Sidebar Filters -->
+<aside class="hidden lg:flex flex-col w-72 sticky top-24 h-[calc(100vh-120px)] bg-white rounded-xl shadow-sm border border-slate-100 p-6 overflow-y-auto custom-scrollbar">
+<div class="flex flex-col gap-8">
+<!-- Profile Section -->
+<div class="flex flex-col items-start gap-3 border-b border-slate-100 pb-6">
+<img alt="User Profile" class="w-12 h-12 rounded-full object-cover" data-alt="Close up portrait of a professional man in a grey suit with a confident smile against a neutral studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeGB5BvNKI5_1jI3EkBITA1tUuwna0tNXHj-b84u3VVgq_hIuyA7Do-NWzx1Re4wEZrXnb-ELRBKzHke4NTkXYghbBneX_Y9aIVkirnBjYlh-m7BxwJ70TYh2isa5LwOJZCfIRcD7Vjrwk7O593M6NURGOKsDuWIPWmr3LRGFjltH67c5OzneCoE9VYzppEnwFS77FcwrOh3XkXFI914LGF0s4sJ0P9BOCb4F2BRTahNDKA7g6f0PUzRUKLpQiMmXuHbR7qmr1i_k"/>
+<div>
+<h4 class="text-on-surface font-h3 text-body-md leading-tight">Alex Sterling</h4>
+<p class="text-slate-500 font-body-sm">Premium Member</p>
+</div>
+</div>
+<!-- Filters -->
+<div class="space-y-6">
+<div>
+<h5 class="text-on-surface font-label-md mb-4 uppercase tracking-wider text-[11px]">Location</h5>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg" data-icon="location_on">location_on</span>
+<input class="w-full pl-10 pr-4 py-2 bg-slate-50 border border-slate-100 rounded-lg text-body-sm focus:ring-2 focus:ring-secondary/20 focus:border-secondary outline-none transition-all" placeholder="City or remote" type="text"/>
+</div>
+</div>
+<div>
+<h5 class="text-on-surface font-label-md mb-4 uppercase tracking-wider text-[11px]">Job Type</h5>
+<div class="space-y-3">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="w-5 h-5 rounded border-slate-300 text-secondary focus:ring-secondary" type="checkbox"/>
+<span class="text-body-sm text-slate-600 group-hover:text-secondary transition-colors">Full-time</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded border-slate-300 text-secondary focus:ring-secondary" type="checkbox"/>
+<span class="text-body-sm text-slate-600 group-hover:text-secondary transition-colors">Contract</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded border-slate-300 text-secondary focus:ring-secondary" type="checkbox"/>
+<span class="text-body-sm text-slate-600 group-hover:text-secondary transition-colors">Remote</span>
+</label>
+</div>
+</div>
+<div>
+<h5 class="text-on-surface font-label-md mb-4 uppercase tracking-wider text-[11px]">Salary Range</h5>
+<input class="w-full h-1.5 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-secondary" type="range"/>
+<div class="flex justify-between mt-2">
+<span class="text-body-sm font-semibold text-slate-500">$50k</span>
+<span class="text-body-sm font-semibold text-secondary">$180k+</span>
+</div>
+</div>
+<div>
+<h5 class="text-on-surface font-label-md mb-4 uppercase tracking-wider text-[11px]">Experience</h5>
+<select class="w-full px-4 py-2 bg-slate-50 border border-slate-100 rounded-lg text-body-sm focus:ring-2 focus:ring-secondary/20 focus:border-secondary outline-none appearance-none">
+<option>Senior Level (5-8 yrs)</option>
+<option>Mid Level (2-5 yrs)</option>
+<option>Junior Level (0-2 yrs)</option>
+<option>Executive (10+ yrs)</option>
+</select>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<section class="flex-1">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+<div>
+<h1 class="text-h2 font-h2 text-on-surface">Available Vacancies</h1>
+<p class="text-slate-500 font-body-md mt-1">Showing 128 curated opportunities in tech and design.</p>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-body-sm text-slate-500">Sort by:</span>
+<button class="flex items-center gap-2 bg-white px-4 py-2 rounded-lg border border-slate-100 shadow-sm text-body-sm font-semibold hover:bg-slate-50 transition-all">
+                        Most Recent
+                        <span class="material-symbols-outlined text-lg" data-icon="expand_more">expand_more</span>
+</button>
+</div>
+</div>
+<!-- Job Cards Grid -->
+<div class="grid grid-cols-1 gap-4">
+<!-- Job Card 1 -->
+<article class="group relative bg-white rounded-xl p-6 border-l-4 border-l-transparent hover:border-l-secondary shadow-[0px_4px_20px_rgba(31,58,109,0.05)] hover:-translate-y-1 transition-all duration-300">
+<div class="flex flex-col md:flex-row gap-6">
+<div class="w-16 h-16 rounded-xl bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary text-3xl" data-icon="rocket_launch">rocket_launch</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-h3 font-h3 text-on-surface mb-1 group-hover:text-secondary transition-colors">Senior Product Designer</h3>
+<div class="flex flex-wrap items-center gap-x-4 gap-y-2">
+<span class="flex items-center gap-1.5 text-body-sm text-slate-500">
+<span class="material-symbols-outlined text-base" data-icon="business">business</span>
+                                            Stellar Systems
+                                        </span>
+<span class="flex items-center gap-1.5 text-body-sm text-slate-500">
+<span class="material-symbols-outlined text-base" data-icon="location_on">location_on</span>
+                                            London, UK (Hybrid)
+                                        </span>
+<span class="flex items-center gap-1.5 text-body-sm text-secondary font-bold">
+<span class="material-symbols-outlined text-base" data-icon="payments">payments</span>
+                                            $120k - $150k
+                                        </span>
+</div>
+</div>
+<button class="text-slate-400 hover:text-error transition-colors">
+<span class="material-symbols-outlined" data-icon="bookmark">bookmark</span>
+</button>
+</div>
+<div class="mt-4 flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-container text-secondary text-[12px] font-bold rounded-full uppercase tracking-tight">Figma</span>
+<span class="px-3 py-1 bg-surface-container text-secondary text-[12px] font-bold rounded-full uppercase tracking-tight">UI/UX</span>
+<span class="px-3 py-1 bg-surface-container text-secondary text-[12px] font-bold rounded-full uppercase tracking-tight">SAAS</span>
+</div>
+</div>
+<div class="flex items-center md:border-l border-slate-100 md:pl-6">
+<a href="jd.html" class="w-full md:w-auto bg-tertiary-fixed text-on-tertiary-fixed-variant px-8 py-3 rounded-lg font-button hover:opacity-90 transition-all shadow-sm" >
+                                Apply Now
+</a>
+</div>
+</div>
+</article>
+<!-- Job Card 2 -->
+<article class="group relative bg-white rounded-xl p-6 border-l-4 border-l-transparent hover:border-l-secondary shadow-[0px_4px_20px_rgba(31,58,109,0.05)] hover:-translate-y-1 transition-all duration-300">
+<div class="flex flex-col md:flex-row gap-6">
+<div class="w-16 h-16 rounded-xl bg-surface-container-highest flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="code">code</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-h3 font-h3 text-on-surface mb-1 group-hover:text-secondary transition-colors">Lead Fullstack Engineer</h3>
+<div class="flex flex-wrap items-center gap-x-4 gap-y-2">
+<span class="flex items-center gap-1.5 text-body-sm text-slate-500">
+<span class="material-symbols-outlined text-base" data-icon="business">business</span>
+                                            Quantum Pay
+                                        </span>
+<span class="flex items-center gap-1.5 text-body-sm text-slate-500">
+<span class="material-symbols-outlined text-base" data-icon="location_on">location_on</span>
+                                            San Francisco, CA (Remote)
+                                        </span>
+<span class="flex items-center gap-1.5 text-body-sm text-secondary font-bold">
+<span class="material-symbols-outlined text-base" data-icon="payments">payments</span>
+                                            $160k - $200k
+                                        </span>
+</div>
+</div>
+<button class="text-slate-400 hover:text-error transition-colors">
+<span class="material-symbols-outlined" data-icon="bookmark">bookmark</span>
+</button>
+</div>
+<div class="mt-4 flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-container text-secondary text-[12px] font-bold rounded-full uppercase tracking-tight">React</span>
+<span class="px-3 py-1 bg-surface-container text-secondary text-[12px] font-bold rounded-full uppercase tracking-tight">Node.js</span>
+<span class="px-3 py-1 bg-surface-container text-secondary text-[12px] font-bold rounded-full uppercase tracking-tight">AWS</span>
+</div>
+</div>
+<div class="flex items-center md:border-l border-slate-100 md:pl-6">
+<a href="jd.html" class="w-full md:w-auto bg-tertiary-fixed text-on-tertiary-fixed-variant px-8 py-3 rounded-lg font-button hover:opacity-90 transition-all shadow-sm">
+                                Apply Now
+</a>
+</div>
+</div>
+</article>
+<!-- Job Card 3 -->
+<article class="group relative bg-white rounded-xl p-6 border-l-4 border-l-transparent hover:border-l-secondary shadow-[0px_4px_20px_rgba(31,58_109,0.05)] hover:-translate-y-1 transition-all duration-300">
+<div class="flex flex-col md:flex-row gap-6">
+<div class="w-16 h-16 rounded-xl bg-orange-50 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-orange-600 text-3xl" data-icon="campaign">campaign</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-h3 font-h3 text-on-surface mb-1 group-hover:text-secondary transition-colors">Director of Marketing</h3>
+<div class="flex flex-wrap items-center gap-x-4 gap-y-2">
+<span class="flex items-center gap-1.5 text-body-sm text-slate-500">
+<span class="material-symbols-outlined text-base" data-icon="business">business</span>
+                                            Bloom Digital
+                                        </span>
+<span class="flex items-center gap-1.5 text-body-sm text-slate-500">
+<span class="material-symbols-outlined text-base" data-icon="location_on">location_on</span>
+                                            New York, NY
+                                        </span>
+<span class="flex items-center gap-1.5 text-body-sm text-secondary font-bold">
+<span class="material-symbols-outlined text-base" data-icon="payments">payments</span>
+                                            $140k - $175k
+                                        </span>
+</div>
+</div>
+<button class="text-slate-400 hover:text-error transition-colors">
+<span class="material-symbols-outlined" data-icon="bookmark">bookmark</span>
+</button>
+</div>
+<div class="mt-4 flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-container text-secondary text-[12px] font-bold rounded-full uppercase tracking-tight">Growth</span>
+<span class="px-3 py-1 bg-surface-container text-secondary text-[12px] font-bold rounded-full uppercase tracking-tight">Strategy</span>
+<span class="px-3 py-1 bg-surface-container text-secondary text-[12px] font-bold rounded-full uppercase tracking-tight">B2B</span>
+</div>
+</div>
+<div class="flex items-center md:border-l border-slate-100 md:pl-6">
+<a href="jd.html" class="w-full md:w-auto bg-tertiary-fixed text-on-tertiary-fixed-variant px-8 py-3 rounded-lg font-button hover:opacity-90 transition-all shadow-sm">
+                                Apply Now
+</a>
+</div>
+</div>
+</article>
+</div>
+<!-- Pagination -->
+<div class="mt-12 flex justify-center items-center gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 text-slate-400 hover:bg-slate-50 transition-all">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-secondary text-white font-bold">1</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50 transition-all">2</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50 transition-all">3</button>
+<span class="px-2 text-slate-400">...</span>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50 transition-all">12</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 text-slate-400 hover:bg-slate-50 transition-all">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6 bg-slate-50 border-t border-slate-200">
+<div class="flex items-center gap-2">
+<span class="text-lg font-bold text-secondary font-h3 tracking-tight">Evera</span>
+<span class="text-slate-500 text-sm font-body-sm">© 2024 Evera Recruitment. All rights reserved.</span>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-slate-500 hover:text-secondary text-sm font-body-sm transition-colors" href="#">Privacy Policy</a>
+<a class="text-slate-500 hover:text-secondary text-sm font-body-sm transition-colors" href="#">Terms of Service</a>
+<a class="text-slate-500 hover:text-secondary text-sm font-body-sm transition-colors" href="#">Contact Us</a>
+<a class="text-slate-500 hover:text-secondary text-sm font-body-sm transition-colors" href="#">About Evera</a>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 lg:hidden bg-white border-t border-slate-100 shadow-[0_-4px_20px_rgba(31,58,109,0.05)] rounded-t-2xl">
+<a class="flex flex-col items-center justify-center text-secondary bg-secondary-container/10 rounded-xl px-4 py-1 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-[10px] font-semibold font-manrope">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="text-[10px] font-semibold font-manrope">Search</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="bookmark">bookmark</span>
+<span class="text-[10px] font-semibold font-manrope">Saved</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-[10px] font-semibold font-manrope">Profile</span>
+</a>
+</nav>
+</body></html>
